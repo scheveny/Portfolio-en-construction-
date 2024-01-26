@@ -1,0 +1,57 @@
+.carousel {
+    position: relative;
+}
+.prev {
+    position: absolute;
+    left: 40px;
+    top: 212px;
+}
+
+.prev svg, .next svg {
+    color: #976;
+    font-size: 50px;
+}
+    
+img {
+    height: 500px;
+    object-fit: cover;
+    width: 100%;
+}
+.positionIndicator {
+    bottom: 50px;
+    color: white;
+    font-weight: 500;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    width: fit-content;
+}
+
+.positionIndicator span {
+    display: inline-block;
+    width: 10px; 
+    height: 10px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.6;
+}
+
+.positionIndicator span:hover {
+    cursor: pointer;
+}
+
+.positionIndicator span.active {
+    background-color: #fff;
+    opacity: 1;
+}
+
+.next {
+    position: absolute;
+    right: 40px;
+    top: 212px;
+}
+
+.next:hover {
+    cursor: pointer;
+}

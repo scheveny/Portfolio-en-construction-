@@ -1,5 +1,4 @@
 import React from "react";
-import Logo from "../../assets/logo_footer.png";
 import "./Footer.css";
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,7 +9,6 @@ function Footer() {
         <footer>
             <div className="footer-menu">
                 <div className="logo-subsection">
-                <img src={Logo} alt="Logo Shop ton jeu" />
                     <div className="address">
                         <span>11, rue du Maupertuis</span>
                         <span>63670 Le Cendre</span>

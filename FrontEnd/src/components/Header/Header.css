@@ -1,0 +1,46 @@
+header {
+    background-color: #272626;
+    color: white;
+    display: flex;
+    align-items: center;
+    height: 80px;
+    justify-content: space-around;
+}
+
+nav {
+    width: 45%;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: larger;
+    font-weight: 600
+}
+
+form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 25%;
+}
+
+form input {
+    border: #965729 solid 1px;
+    border-radius: 50px;
+    height: 40px;
+    width: 100%;
+    padding-left: 40px;
+    font-size: larger;
+}
+
+form svg {
+    font-size: 24px;
+}
+
+svg:hover {
+    cursor: pointer;
+}
+

@@ -7,11 +7,13 @@ import Home from "./pages/Home/Home";
 //Import du style du corps de la page
 import "./index.css";
 import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
+      <Header />
       <Routes>
           <Route path="/" element={<Home />} />
       </Routes>
