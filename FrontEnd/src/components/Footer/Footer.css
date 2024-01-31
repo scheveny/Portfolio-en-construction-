@@ -7,6 +7,7 @@ footer {
     justify-content: space-evenly;
     background-color: #272626;
     color: white;
+    margin-top: 50px;
 }
 
 footer p {
@@ -16,40 +17,45 @@ footer p {
 
 .footer-menu {
     display: flex;
-    justify-content: space-around;
-}
-
-.headings, .contact {
-    width: 25%;
-}
-
-.logo-subsection {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    width: 20%;
+    justify-content: space-evenly;
 }
 
 .address {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
+    width: 40%;
+}
+
+.address span {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.address a {
+    color: white;
+    text-decoration: none;
     text-align: center;
 }
 
 .socials {
     display: flex;
     width: 70%;
-    justify-content: space-around;
+    justify-content: center;
+    width: 100%;
+    gap: 30px;
+    margin-top: 20px;
 }
 
 .social-link {
     color: white;
+    font-size: 30px;
 }
 
-.headings h2, .contact h2 {
+.headings {
+    width: 40%;
+}
+
+.headings h2, .address h2 {
     padding-bottom: 7px;
     border-bottom: #965729 solid 3px;
 }
@@ -67,24 +73,4 @@ footer p {
     text-decoration: none;
     color: white;
     font-weight: 300;
-}
-
-.contact {
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.contact div {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.contact a {
-    text-decoration: none;
-    color: #965729;
-    font-weight: 600;
 }

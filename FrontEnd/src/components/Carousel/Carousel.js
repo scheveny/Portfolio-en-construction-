@@ -1,34 +1,49 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import "./Carousel.css";
-import image1 from "../../assets/Images/Carousel/image1.jpg";
-import image2 from "../../assets/Images/Carousel/image2.jpg";
-import image3 from "../../assets/Images/Carousel/image3.jpg";
+import image1 from "../../assets/Images/Carousel/image1.png";
+import image2 from "../../assets/Images/Carousel/image2.png";
+import image3 from "../../assets/Images/Carousel/image3.png";
+import image4 from "../../assets/Images/Carousel/image4.png";
+import image5 from "../../assets/Images/Carousel/image5.png";
+import image6 from "../../assets/Images/Carousel/image6.png";
 
 function Carousel() {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const pictures = [image1, image2, image3];
+    
+    // Utilisation de useMemo pour éviter que le tableau pictures ne change à chaque rendu
+    const pictures = useMemo(() => [image1, image2, image3, image4, image5, image6], []);
 
-    const NextImg = () => {
+    const NextImg = useCallback(() => {
         if (currentIndex === pictures.length - 1) {
             setCurrentIndex(0);
         } else {
             setCurrentIndex((prevIndex) => prevIndex + 1);
         }
-    };
+    }, [currentIndex, pictures]);
 
-    const PrevImg = () => {
+    const PrevImg = useCallback(() => {
         if (currentIndex === 0) {
             setCurrentIndex(pictures.length - 1);
         } else {
             setCurrentIndex((prevIndex) => prevIndex - 1);
         }
-    };
+    }, [currentIndex, pictures]);
 
     const handleClickIndicator = (index) => {
         setCurrentIndex(index);
     };
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            NextImg();
+        }, 3000);
+
+        return () => {
+            clearInterval(intervalId);
+        };
+    }, [currentIndex, NextImg]);
 
     return (
         <div className="carousel">

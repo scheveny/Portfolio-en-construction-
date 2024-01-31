@@ -1,0 +1,30 @@
+.intro-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.intro-banner img {
+    width: 15%;
+    max-height: 100%; /* Ajout de cette ligne */
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.intro-banner h1 {
+    width: 50%;
+    text-align: center;
+}
+
+.intro-text {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.intro-text div {
+    font-size: larger;
+    width: 70%;
+}
