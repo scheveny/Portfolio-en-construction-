@@ -20,9 +20,10 @@ function Footer() {
                 <div className="headings">
                     <h2>Rubriques</h2>
                     <ul>
-                        <li><Link to="#">À propos</Link></li>
-                        <li><Link to="#">Mes services</Link></li>
-                        <li><Link to="#">Réalisations</Link></li>
+                        <li><Link to="/">Accueil</Link></li>
+                        <li><Link to="/Service">Mes services</Link></li>
+                        <li><Link to="/Works">Réalisations</Link></li>
+                        <li><Link to="/Contact">Contactez-moi</Link></li>
                     </ul>
                 </div>
             </div>

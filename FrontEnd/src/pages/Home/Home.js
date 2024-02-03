@@ -7,7 +7,10 @@ function Home() {
         <div>
             <Carousel />
             <div className="intro-banner">
-                <h1>Bonjour, Je suis Sylvain Chéveny, développeur fullstack ReactJs</h1>
+                <div>
+                    <h1>Bonjour, je suis Sylvain Chéveny, développeur fullstack ReactJs</h1>
+                    <h2>Bienvenue sur mon site portfolio</h2>
+                </div>
                 <img src={profil}></img>
             </div>
             <div className="intro-text">

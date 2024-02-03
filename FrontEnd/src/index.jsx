@@ -4,10 +4,12 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 //Pages importées
 import Home from "./pages/Home/Home";
+import Service from "./pages/Service/Service";
+import Contact from "./pages/Contact/Contact";
 //Import du style du corps de la page
 import "./index.css";
 import Footer from './components/Footer/Footer';
-import Header from './components/Header/Header'
+import Header from './components/Header/Header';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,6 +18,8 @@ root.render(
       <Header />
       <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/Service" element={<Service />} />
+          <Route path="/Contact" element={<Contact />} />
       </Routes>
       <Footer />
     </Router>

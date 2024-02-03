@@ -8,9 +8,9 @@ function Header() {
         <header>
             <nav>
                 <NavLink to="/">Accueil</NavLink>
-                <NavLink to="/MyServices">Mes services</NavLink>
-                <NavLink to="/MyWorks">Réalisations</NavLink>
-                <NavLink to="/About">Me contacter</NavLink>
+                <NavLink to="/Service">Mes services</NavLink>
+                <NavLink to="/Works">Réalisations</NavLink>
+                <NavLink to="/Contact">Me contacter</NavLink>
             </nav>
         </header>
     );
