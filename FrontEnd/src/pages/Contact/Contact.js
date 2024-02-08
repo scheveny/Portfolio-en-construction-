@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
@@ -6,6 +6,8 @@ import axios from 'axios';
 import "./Contact.css"
 
 function Contact() {
+
+    const [successMessage, setSuccessMessage] = useState(null);
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -20,6 +22,8 @@ function Contact() {
         try {
             const response = await axios.post('http://localhost:3001/submit-form', formObject);
             console.log(response.data);
+             // Afficher le message de succès
+             setSuccessMessage(response.data.message);
             // Ajoutez ici la logique pour gérer la réponse du serveur si nécessaire
         } catch (error) {
             console.error('Erreur lors de la soumission du formulaire', error);
@@ -31,6 +35,7 @@ function Contact() {
         <div className="contact">
             <div className="contact-text">
                 <h2>Me contacter</h2>
+                {successMessage && <p className="success-message">{successMessage}</p>}
                 <span>N'hésitez pas à me contacter via ce formulaire, ou par <Link to="mailto:scheveny@gmail.com" >mail</Link>!</span>
                 <Link to="mailto:scheveny@gmail.com"><FontAwesomeIcon className="mail-icon" icon={faEnvelope} /></Link>
             </div>

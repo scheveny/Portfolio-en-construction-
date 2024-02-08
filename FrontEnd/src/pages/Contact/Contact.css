@@ -10,6 +10,13 @@
     justify-content: space-evenly;
 }
 
+.success-message {
+    color: red;
+    border: 1px red solid;
+    border-radius: 50px;
+    padding: 5px 10px;
+}
+
 .mail-icon {
     color: rgb(43, 112, 231);
     font-size: 100px;

@@ -1,5 +1,5 @@
 import Carousel from "../../components/Carousel/Carousel";
-import profil from "../../assets/Images/Home/photo_profil.jpg"
+import profil from "../../assets/images/Home/photo_profil.jpg"
 import "./Home.css"
 
 function Home() {
@@ -11,7 +11,7 @@ function Home() {
                     <h1>Bonjour, je suis Sylvain Chéveny, développeur fullstack ReactJs</h1>
                     <h2>Bienvenue sur mon site portfolio</h2>
                 </div>
-                <img src={profil}></img>
+                <img src={profil} alt="profil Sylvain Chéveny"></img>
             </div>
             <div className="intro-text">
                 <div>Après plusieurs années dans l'agrolimentaire, j'ai décidé de me reconvertir dans le développement web ayant toujours été intéressé par la technologie, même si mes compétences étaient plus centrées du côté matériel (montage pc, etc...).

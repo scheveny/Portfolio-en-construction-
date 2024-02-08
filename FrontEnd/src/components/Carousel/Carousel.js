@@ -2,12 +2,12 @@ import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import "./Carousel.css";
-import image1 from "../../assets/Images/Carousel/image1.png";
-import image2 from "../../assets/Images/Carousel/image2.png";
-import image3 from "../../assets/Images/Carousel/image3.png";
-import image4 from "../../assets/Images/Carousel/image4.png";
-import image5 from "../../assets/Images/Carousel/image5.png";
-import image6 from "../../assets/Images/Carousel/image6.png";
+import image1 from "../../assets/images/Carousel/image1.png";
+import image2 from "../../assets/images/Carousel/image2.png";
+import image3 from "../../assets/images/Carousel/image3.png";
+import image4 from "../../assets/images/Carousel/image4.png";
+import image5 from "../../assets/images/Carousel/image5.png";
+import image6 from "../../assets/images/Carousel/image6.png";
 
 function Carousel() {
     const [currentIndex, setCurrentIndex] = useState(0);

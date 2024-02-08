@@ -6,6 +6,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Service from "./pages/Service/Service";
 import Contact from "./pages/Contact/Contact";
+import Works from "./pages/Works/Works";
+import Details from "./pages/Details/Details";
+import NotFound from './pages/NotFound/NotFound';
 //Import du style du corps de la page
 import "./index.css";
 import Footer from './components/Footer/Footer';
@@ -20,6 +23,9 @@ root.render(
           <Route path="/" element={<Home />} />
           <Route path="/Service" element={<Service />} />
           <Route path="/Contact" element={<Contact />} />
+          <Route path="/Works" element={<Works />} />
+          <Route path="/Details/:id" element={<Details />} />
+          <Route path="*" element={<NotFound/>} />
       </Routes>
       <Footer />
     </Router>

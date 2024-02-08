@@ -1,0 +1,63 @@
+#cardList a {
+    align-items: center;
+    color: black;
+    display: flex;
+    height: 340px;
+    justify-content: center;
+    margin: 25px;
+    text-decoration: none;
+    transition: 0.5s;
+    width: 45%;
+}
+.cardContent {
+    align-items: center;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+.cardContent img {
+    border-radius: 10px;
+    filter: brightness(65%);
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+.cardContent figcaption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    max-width: 280px;
+    text-align: left;
+}
+ 
+.cardContent a:hover {
+    transform: scale(1.02);
+    transition: 0.5s;
+}
+
+@media screen and (max-width: 800px) {
+    #cardList {
+        a {
+        height: 255px;
+        width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 375px) {
+    #cardList {
+        margin: 5px 0 5px 0;
+        a {
+            margin: 5px 0 5px 0;
+        }
+    }
+}
