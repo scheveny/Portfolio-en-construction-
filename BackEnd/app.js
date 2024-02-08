@@ -27,31 +27,33 @@ app.use(express.json());
 
 // Route pour gérer la soumission du formulaire
 app.post('/submit-form', (req, res) => {
-  try {
-    const { prenom, nom, email, objet, message } = req.body;
-
-    // Configuration du message à envoyer
-    const mailOptions = {
-      from: 'chevenyportfolio@hotmail.com',
-      to: 'tchev@hotmail.fr',
-      subject: objet,
-      text: `De: ${prenom} ${nom}\nEmail: ${email}\nMessage: ${message}`
-    };
-
-    // Envoi du message
-    transporter.sendMail(mailOptions, (error, info) => {
-      if (error) {
-        console.error('Erreur lors de l\'envoi du mail', error);
-        res.status(500).json({ success: false, message: 'Erreur lors de l\'envoi du formulaire' });
-      } else {
-        console.log('Email envoyé avec succès:', info.response);
-        res.status(200).json({ success: true, message: 'Email envoyé avec succès!' });
-      }
-    });
-  } catch (error) {
-    console.error('Erreur lors de l\'envoi du formulaire', error);
-    res.status(500).json({ success: false, message: 'Erreur lors de l\'envoi du formulaire' });
-  }
-});
+    try {
+      const { prenom, nom, email, objet, message } = req.body;
+  
+      // Configuration du message à envoyer
+      const mailOptions = {
+        from: 'chevenyportfolio@hotmail.com',
+        to: 'tchev@hotmail.fr',
+        subject: objet,
+        text: `De: ${prenom} ${nom}\nEmail: ${email}\nMessage: ${message}`
+      };
+  
+      // Envoi du message
+      transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+          console.error('Erreur lors de l\'envoi du mail', error);
+          res.status(500).json({ success: false, message: 'Erreur lors de l\'envoi du formulaire' });
+        } else {
+          console.log('Email envoyé avec succès:', info.response);
+  
+          // Modification de la réponse pour indiquer le succès
+          res.status(200).json({ success: true, message: 'Message envoyé avec succès!' });
+        }
+      });
+    } catch (error) {
+      console.error('Erreur lors de l\'envoi du formulaire', error);
+      res.status(500).json({ success: false, message: 'Erreur lors de l\'envoi du formulaire' });
+    }
+  });
 
 module.exports = app;
