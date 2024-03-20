@@ -1,18 +1,20 @@
 const express = require('express');
 const app = express();
+const mongoose = require('mongoose');
+const userRoutes = require('./routes/user');
 const nodemailer = require('nodemailer');
 require('dotenv').config();
 
-// Configuration du transporter pour le nouveau compte Outlook
-const transporter = nodemailer.createTransport({
-  host: 'smtp.office365.com',
-  port: 587,
-  secure: false, // Si vous utilisez TLS
-  auth: {
-    user: process.env.OUTLOOK_USER,
-    pass: process.env.OUTLOOK_PASSWORD
-  }
-});
+//Handle DB connection
+const { DB_USER, DB_PASSWORD, DB_CLUSTER, DB_NAME } = process.env;
+
+mongoose.connect(`mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_CLUSTER}/${DB_NAME}?retryWrites=true&w=majority&appName=Cluster0`, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => console.log('Connexion à MongoDB réussie !'))
+.catch(() => console.log('Connexion à MongoDB échouée !'));
+
 
 // Middleware pour gérer les erreurs CORS
 app.use((req, res, next) => {
@@ -24,6 +26,19 @@ app.use((req, res, next) => {
 
 // Middleware pour traiter le corps de la requête en tant que JSON
 app.use(express.json());
+
+app.use('/api/auth', userRoutes);
+
+// Configuration du transporter pour le nouveau compte Outlook
+const transporter = nodemailer.createTransport({
+  host: 'smtp.office365.com',
+  port: 587,
+  secure: false,
+  auth: {
+    user: process.env.OUTLOOK_USER,
+    pass: process.env.OUTLOOK_PASSWORD
+  }
+});
 
 // Route pour gérer la soumission du formulaire
 app.post('/submit-form', (req, res) => {
